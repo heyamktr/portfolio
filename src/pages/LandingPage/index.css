@@ -1,0 +1,38 @@
+#tsparticles {
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+.landing-page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.landing-page .introduction {
+    color: var(--highlight-text-color);
+    position: absolute;
+    text-align: center;
+}
+
+.landing-page .introduction h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.landing-page .btn {
+    background-color: var(--highlight-color);
+    color: antiquewhite;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 2rem;
+    transition: background-color 0.3s;
+}
+
+.landing-page .btn:hover {
+    background-color: var(--highlight-color);
+}
