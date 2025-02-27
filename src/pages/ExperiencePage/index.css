@@ -1,0 +1,167 @@
+.exp-container {
+    color: antiquewhite;
+    padding-top: 80px;
+}
+
+.exp-title {
+    font-size: 4rem;
+    padding-left: 50px;
+    margin-bottom: 50px;
+}
+
+.exp-work {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.exp-work::before {
+    content: "";
+    border-left: 4px solid rgb(255,255,255, 0.8);
+    position: absolute;
+    left: 15%;
+    width: 85%;
+    height: 100%;
+}
+
+.job {
+    width: 60%;
+    padding: 20px;
+    margin: 20px;
+    background-color: rgba(255,255,255,0.1);
+    /* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ); */
+    box-shadow: 0 0 80px rgba(0,0,0,0.3);
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+    position: relative;
+    border: 2px solid rgba(255,255,255,0.1);
+}
+
+.job::after {
+    position: absolute;
+    box-shadow: 0 0 0 2px rgba(252,176,69,1);
+    height: 11px;
+    width: 11px;
+    border-radius: 50%;
+    content: "";
+    transform: translate(-50%, -50%);
+    top: 40px;
+    /* card to left: 20%, line to left: 15% card width: 60%
+        => 5% for total => 5% : 60% for card width => 5%/60% = 8.3333%
+    */
+    left: -8.3333%; 
+    background-color: rgba(252,176,69,1);
+}
+
+.job::before {
+    content: attr(date);
+    position: absolute;
+    left: -30%;
+    top: 15px;
+    transition: transform 0.5s ease;
+    /* color: rgba(255,255,255,0.4); */
+    color: rgba(252,176,69,1);
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.job:hover::before {
+    transform: translateX(-30%);
+    transition: transform 0.5s ease;
+}
+
+.job:hover {
+    transform:translateX(30px);
+    transition: all 0.5s ease;
+    box-shadow: 0 0 32px 0 rgba(255,255,255,0.5);
+}
+
+.job-company-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.job-company {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #428bca;
+}
+
+.job-title {
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.job-location {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+@media (max-width: 1000px) {
+    .exp-title {
+        text-align: center;
+    }
+    .exp-container {
+        margin-top: 0;
+    }
+    .job-company-date {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+}
+@media (max-width: 600px) {
+    /* Further scale down for extra small screens */
+    .exp-title {
+        margin-bottom: 20px;
+    }
+
+    .job {
+        width: 70%;
+        padding: 10px;
+        margin: 20px 0 20px 10%;
+        /* margin: 10px 0; */
+        border-radius: 6px;
+    }
+
+    .job::before {
+        left: -27%;
+        padding: 0;
+    }
+
+    .job:hover::before {
+        transform: none;
+    }
+    
+    .job:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .job:after {
+        height: 8px;
+        width: 8px;
+        left: -7.14%;
+    }
+
+    .job-company {
+        font-size: 2rem;
+    }
+
+    .job-location {
+        font-size: 1.5rem;
+    }
+
+    .job-title {
+        font-size: 1.5rem;
+    }
+
+    .job-description {
+        font-size: 1.5rem;
+    }
+}
